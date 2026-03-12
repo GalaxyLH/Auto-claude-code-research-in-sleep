@@ -24,6 +24,19 @@ A real overnight 4-round run on an ML research project, from borderline reject t
 
 The loop autonomously ran **20+ GPU experiments**, rewrote the paper's narrative framing, and killed claims that didn't hold up — all without human intervention.
 
+## 💡 Idea Discovery (New)
+
+Don't have a concrete idea yet? Just give a research direction — `/idea-creator` handles the rest:
+
+1. **Survey** the landscape (recent papers, open problems, recurring limitations)
+2. **Brainstorm** 8-12 concrete ideas via GPT-5.4 xhigh
+3. **Filter** by feasibility, compute cost, and quick novelty search
+4. **Validate** top ideas with deep novelty check + devil's advocate review
+5. **Pilot** top 2-3 ideas in parallel on different GPUs (30 min - 2 hr each)
+6. **Rank** by empirical signal — ideas with positive pilot results rise to the top
+
+The output is a ranked `IDEA_REPORT.md` with hypotheses, pilot results, reviewer objections, and a suggested execution order. Ideas that fail are documented too, saving future dead-end exploration.
+
 ---
 
 ## 🔄 Workflows
