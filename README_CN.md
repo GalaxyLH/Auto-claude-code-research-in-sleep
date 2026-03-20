@@ -1076,22 +1076,18 @@ claude
 - [x] **飞书集成** — 三种模式（关闭/推送/交互），通过 `~/.claude/feishu.json` 配置。推送只需 webhook URL；交互用 [feishu-claude-code](https://github.com/joewongjc/feishu-claude-code)。默认关闭——对已有工作流零影响。见[设置指南](#-飞书lark-集成可选)
 - [x] **Zotero MCP 集成** — `/research-lit` 搜索 Zotero 文献库、读取标注/高亮、导出 BibTeX。推荐：[zotero-mcp](https://github.com/54yyyu/zotero-mcp)（1.8k⭐）。见[设置指南](#-zotero-集成可选)
 - [x] **Obsidian 集成** — `/research-lit` 搜索 Obsidian vault 中的研究笔记、标签引用、wikilinks。推荐：[mcpvault](https://github.com/bitbonsai/mcpvault)（760⭐）+ [obsidian-skills](https://github.com/kepano/obsidian-skills)（13.6k⭐）。见[设置指南](#-obsidian-集成可选)
-- [x] **更多执行者 × 评审者组合** — 任意 OpenAI 兼容 API 均可通过 [`llm-chat`](mcp-servers/llm-chat/) MCP 服务器接入。GLM、MiniMax、Kimi、LongCat、DeepSeek 已全部测试——无需 Claude 或 OpenAI API
+- [x] **更多执行者 × 评审者组合** — 任意 OpenAI 兼容 API 均可通过 [`llm-chat`](mcp-servers/llm-chat/) MCP 服务器接入
+- [x] **GitHub 代码同步** — `/run-experiment` 支持 `code_sync: git`（`git push` → `ssh "git pull"`）
+- [x] **W&B 集成** — `wandb: true` 时自动加 `wandb.init()` + `wandb.log()`，`/monitor-experiment` 拉训练曲线
+- [x] **ModelScope 集成** — [免费](docs/MODELSCOPE_GUIDE.md)（2000 次/天），一个 Key，双协议
 
 </details>
 
 ### 计划中
 
-- [x] **GitHub 代码同步** — `/run-experiment` 现支持在 CLAUDE.md 中设置 `code_sync: git`：本地 `git push` → 服务器 `ssh "git pull"`。默认仍为 `rsync`（零破坏性改动）
-- [x] **W&B 集成** — `/run-experiment` 在 CLAUDE.md 配置 `wandb: true` 时自动给训练脚本加 `wandb.init()` + `wandb.log()`。`/monitor-experiment` 从 W&B 拉取训练曲线用于更丰富的诊断。默认关闭，未配置时零影响
-- [ ] **常驻模式（Daemon mode）** — 通过 `launchd`/`systemd` 自动重启 Claude Code 会话，实现真正的无人值守运行。当前编排层需要活跃的 CLI 会话；状态文件（`REVIEW_STATE.json`、`AUTO_REVIEW.md`）支持跨会话恢复，但重启需手动操作（[#11](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/issues/11)）
-- [ ] **参考风格图表生成** — 读取参考论文 PDF 中的图表 → 识别图表类型、配色方案、布局风格 → 用自己的数据生成同风格图表。两个子目标：
-  - **数据图表**（中等难度）：提取参考图配色/字体 → 转为 matplotlib rcParams → 用自己数据生成同风格 chart
-  - ~~**方法示意图**（高难度）~~：✅ 已由 [`paper-illustration`](skills/paper-illustration/SKILL.md) 解决 — Claude→Gemini→Nano Banana Pro 流水线，集成到工作流 3
-  - 技术方案：[PaperBanana](https://github.com/dwzhu-pku/PaperBanana)（5 agent 框架：Retriever→Stylist→Visualizer→Critic，NeurIPS benchmark）、[Nano Banana Pro](https://deepmind.google/models/gemini-image/pro/)（Gemini 图像模型）、[FigureLabs](https://www.figurelabs.ai/)（商业方案，PDF 导入）。ClawHub 上有 [OpenClaw 版本](https://clawhub.ai/skills/paperbanana)可参考，但需重写为 Claude Code skill（原版文件不完整 + 安全标记）
-  - 最终增强 `/paper-figure` 支持 `— reference: paper.pdf` 风格匹配
-- [ ] **工作流执行报告** — 每个工作流（1/1.5/2/3）完成后自动生成结构化总结：做了什么、关键决策、跑了哪些实验、获得什么结果、评分和耗时。输出为 `WORKFLOW_REPORT.md`，方便进度追踪、团队汇报和导师沟通
-- [x] **ModelScope 集成** — [ModelScope 指南](docs/MODELSCOPE_GUIDE.md) 已加入为方案 E。免费（2000 次/天），一个 Key，双协议（Anthropic + OpenAI），无自动化限制。推荐 DeepSeek-V3.1 + DeepSeek-R1
+- [ ] **常驻模式（Daemon mode）** — 通过 `launchd`/`systemd` 自动重启 Claude Code 会话，实现真正的无人值守运行（[#11](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/issues/11)）
+- [ ] **参考风格图表生成** — 参考论文 PDF 图表 → 识别配色/布局 → 生成同风格数据图表。方法示意图 ✅ 已由 `paper-illustration` 解决
+- [ ] **工作流执行报告** — 每个工作流完成后自动生成结构化总结：做了什么、关键决策、实验结果、评分和耗时。输出 `WORKFLOW_REPORT.md`，方便汇报
 
 ## 💬 交流群
 
