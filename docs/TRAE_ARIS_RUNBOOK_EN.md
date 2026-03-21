@@ -155,6 +155,7 @@ Directly reference the skill file and attach an action instruction in the conver
 Run the auto review loop for "factorized gap in discrete diffusion LMs".
 ```
 
+Note: `@skills/.../SKILL.md` references only resolve if the ARIS repo (or its `skills/` folder) is part of the current Trae workspace. They will not work when the skills folder exists only in a separate workspace.
 ### D. Convert Frequent Skills into Local Rules
 
 Move frequently used skill instructions into project rules to reduce repeated manual pasting.
