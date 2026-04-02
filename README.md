@@ -2,6 +2,8 @@
 
 🔥 [**ARIS-Code CLI — 独立安装版**](docs/ARIS-Code-README_CN.md) · [English](docs/ARIS-Code-README_EN.md) | [⬇️ Download](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/releases/latest)
 
+<img src="docs/aris-code-banner.png" width="600" alt="ARIS-Code CLI">
+
 ![ARIS Logo](docs/aris_logo.svg)
 
 ![Hero](docs/hero_combined.svg)
