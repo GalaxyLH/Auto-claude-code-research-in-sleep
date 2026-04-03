@@ -143,6 +143,11 @@ claude
 ```
 
 > 📝 **模板可用！** 见 [`templates/`](templates/) 目录——每个工作流都有现成输入模板：[研究简报](templates/RESEARCH_BRIEF_TEMPLATE.md)（工作流 1）、[实验计划](templates/EXPERIMENT_PLAN_TEMPLATE.md)（工作流 1.5）、[研究叙事](templates/NARRATIVE_REPORT_TEMPLATE.md)（工作流 3）、[论文大纲](templates/PAPER_PLAN_TEMPLATE.md)（工作流 3）。
+>
+> 🗑️ **卸载：** 仅删除 ARIS skills，不影响你自己的 skills：
+> ```bash
+> cd Auto-claude-code-research-in-sleep && ls skills/ | xargs -I{} rm -rf ~/.claude/skills/{}
+> ```
 
 > **提示：** 所有流水线行为均可通过内联参数配置——在命令后追加 `— key: value`：
 >

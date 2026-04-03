@@ -161,6 +161,11 @@ claude
 ```
 
 > 📝 **Templates available!** See [`templates/`](templates/) for ready-to-use input templates for every workflow — [research brief](templates/RESEARCH_BRIEF_TEMPLATE.md) (Workflow 1), [experiment plan](templates/EXPERIMENT_PLAN_TEMPLATE.md) (Workflow 1.5), [narrative report](templates/NARRATIVE_REPORT_TEMPLATE.md) (Workflow 3), [paper plan](templates/PAPER_PLAN_TEMPLATE.md) (Workflow 3).
+>
+> 🗑️ **Uninstall:** To remove ARIS skills without affecting your own personal skills:
+> ```bash
+> cd Auto-claude-code-research-in-sleep && ls skills/ | xargs -I{} rm -rf ~/.claude/skills/{}
+> ```
 
 > **Tip:** All pipeline behaviors are configurable via inline overrides — append `— key: value` to any command:
 >
