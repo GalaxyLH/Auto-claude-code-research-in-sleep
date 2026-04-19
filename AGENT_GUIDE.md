@@ -66,6 +66,7 @@ Parameters pass through workflow chains automatically.
 | `/result-to-claim` | Verdict judgment | Codex judges if claims are supported |
 | `/paper-claim-audit "paper/"` | Numerical claim audit | Zero-context fresh reviewer cross-checks paper numbers vs raw evidence |
 | `/citation-audit "paper/"` | Bibliography audit | Cross-family reviewer verifies existence + metadata + context for every \cite |
+| `/overleaf-sync setup\|pull\|push\|status` | Overleaf bridge | Two-way sync via Overleaf Git bridge; token stays in OS keychain, never in chat |
 | `/paper-plan "topic"` | Outline creation | Structured outline + claims matrix |
 | `/paper-figure "plan"` | Figure generation | Plots from experiment data |
 | `/paper-write "plan"` | LaTeX drafting | Section-by-section with citation check |
